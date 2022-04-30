@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mediawiki:
+    image: toan2/enwiki
+    build: .
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./html/images:/var/www/html/images
+      - ./html/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./data:/var/www/data
